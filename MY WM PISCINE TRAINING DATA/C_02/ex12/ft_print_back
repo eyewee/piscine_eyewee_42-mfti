@@ -1,0 +1,64 @@
+#include <unistd.h>
+#include <stdio.h> //for printf
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void ft_hexer(unsigned char c)
+{
+    ft_putchar("0123456789abcdef"[c / 16]);
+    ft_putchar("0123456789abcdef"[c % 16]);
+}
+
+void ft_putstr_non_printable(char *str)
+{
+    int i;
+    i = 0;
+
+    while (str[i] != '\0')
+    {
+        if ((str[i] < 32 || str[i] == 127))
+        {
+		ft_putchar('\\');
+		ft_hexer(str[i]);
+        }
+        ft_putchar(str[i]);
+        i++;
+    }
+}
+
+
+void *ft_print_memory(void *addr, unsigned int size)
+{
+	unsigned int i;
+	int j;
+
+	i = 0;
+	while (i < size)
+	{
+		ft_putchar('0');
+		j = 56;
+		while ((j -= 8) >= 0)
+			ft_hexer((unsigned long int)(addr + i) >> j & 0xff);
+
+		ft_putchar(':');
+		ft_putchar('\n');
+		i += 16;
+	}
+    return addr;
+}
+
+
+int main(void)
+{
+    char *str;
+    str = "Bonjour les aminches\t\n\tc  est fou.tout.ce qu on peut faire avec...print_memory....lol.lol. ";
+    ft_print_memory(str, 90);
+
+
+
+return 0;
+}
+

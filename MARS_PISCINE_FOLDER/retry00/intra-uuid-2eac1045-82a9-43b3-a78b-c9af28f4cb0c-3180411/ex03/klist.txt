@@ -1,0 +1,7 @@
+Credentials cache: API:58EA04A0-CF1E-4DDE-A388-12AC675878AD
+        Principal: bislamov@42.FR
+
+  Issued                Expires               Principal
+Mar  9 14:18:31 2020  Mar 16 14:18:31 2020  krbtgt/42.FR@42.FR
+Mar  9 14:18:32 2020  Mar 16 14:18:31 2020  HTTP/student-storage-2.42.fr@42.FR
+Mar  9 14:22:11 2020  Mar 16 14:18:31 2020  ldap/ldap-proxy.42.fr@42.FR
